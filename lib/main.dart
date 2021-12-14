@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
                child: Row(
                  children: [
                    CategoriesCard(CustomTheme.primaryColor, Icons.person, "Find People"),
-                   CategoriesCard(Colors.blue.withOpacity(0.8), Icons.inbox_outlined  , "Invite Friends"),
+                   CategoriesCard(Colors.lightBlue.withOpacity(1), Icons.inbox_outlined  , "Invite Friends"),
                    CategoriesCard(CustomTheme.primaryColor, Icons.people, "Join Groupes"),
                  ],
                ),
