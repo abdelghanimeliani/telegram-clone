@@ -1,3 +1,4 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:telegramclone/theme.dart';
@@ -11,7 +12,9 @@ main(){
 
 
 class MyApp extends StatelessWidget {
-   MyApp({Key? key}) : super(key: key);
+
+
+  MyApp({Key? key}) : super(key: key);
   List<ChatUsers> chatUsers = [
     ChatUsers(name :  "Malek Talaiche", messageText: "rak faragh doka ?", imageURL :  "assets/malek.jpg", time: "Now"),
     ChatUsers(name :  "Samy Benhafef", messageText: "waaach win rak ?", imageURL :  "assets/samy.jpg", time: "12:21"),
@@ -21,10 +24,36 @@ class MyApp extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    var iconList=[
+      Icons.phone,
+      Icons.people,
+      Icons.message,
+      Icons.settings,
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
       home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {  },
+          backgroundColor: CustomTheme.primaryColor,
+          elevation: 10,
+          child:Icon(
+              IconData(0xf37e , fontFamily: CupertinoIcons.iconFont , fontPackage: CupertinoIcons.iconFontPackage) , color: Colors.black54, size: 40,) ,
+          //params
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: AnimatedBottomNavigationBar(
+          //ctiveColor: CustomTheme.primaryColor,
+
+          inactiveColor: Colors.black54,
+          icons: iconList,
+          activeIndex: 0,
+          gapLocation: GapLocation.center,
+          notchSmoothness: NotchSmoothness.softEdge,
+          onTap: (index) {},
+          //other params
+        ),
         backgroundColor: CustomTheme.withe,
      body: SingleChildScrollView(
        child: Column(

@@ -80,7 +80,15 @@ class _ConversationListState extends State<ConversationList> {
                     width: 20,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: CustomTheme.primaryColor
+                      color: CustomTheme.primaryColor,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black54 ,
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: Offset(0, 0)
+                        ),
+                      ],
                     ),
                     child: Center(
                       child: Text(
