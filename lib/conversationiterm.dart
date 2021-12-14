@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:telegramclone/theme.dart';
 
 class ConversationList extends StatefulWidget{
   String ? name;
@@ -43,9 +44,9 @@ class _ConversationListState extends State<ConversationList> {
                         boxShadow: [
                           BoxShadow(
                            color: Colors.black54 ,
-                            spreadRadius: 0,
-                            blurRadius: 8,
-                              offset: Offset(0, 1)
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                              offset: Offset(0, 0)
                           ),
                         ],
 
@@ -64,7 +65,7 @@ class _ConversationListState extends State<ConversationList> {
                           children: <Widget>[
                             Text(widget.name.toString(), style: TextStyle(fontSize: 18 , fontWeight: FontWeight.bold),),
                             SizedBox(height: 6,),
-                            Text(widget.messageText.toString(),style: TextStyle(fontSize: 15,color: Colors.grey.shade600, fontWeight: FontWeight.bold),),
+                            Text(widget.messageText.toString(),style: TextStyle(fontSize: 18,color: Colors.grey.shade600, fontWeight: FontWeight.bold),),
                           ],
                         ),
                       ),
@@ -79,17 +80,18 @@ class _ConversationListState extends State<ConversationList> {
                     width: 20,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.lightBlue
+                      color: CustomTheme.primaryColor
                     ),
                     child: Center(
                       child: Text(
-                        '2',
+                        '1',
                         style: TextStyle(
                           color: Colors.white
                         ),
                       ),
                     ),
                   ),
+                  SizedBox(height:8,),
                   Text(widget.time.toString(),style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                 ],
               ),

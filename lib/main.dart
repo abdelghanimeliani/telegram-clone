@@ -13,10 +13,11 @@ main(){
 class MyApp extends StatelessWidget {
    MyApp({Key? key}) : super(key: key);
   List<ChatUsers> chatUsers = [
-    ChatUsers(name :  "Malek Talaiche", messageText: "rak faragh doka ?", imageURL :  "assets/firstime.jpg", time: "Now"),
+    ChatUsers(name :  "Malek Talaiche", messageText: "rak faragh doka ?", imageURL :  "assets/malek.jpg", time: "Now"),
     ChatUsers(name :  "Samy Benhafef", messageText: "waaach win rak ?", imageURL :  "assets/samy.jpg", time: "12:21"),
-    ChatUsers(name :  "Oussama Djatou", messageText: "chikh", imageURL :  "assets/oussama.jpg", time: "Now"),
-    ChatUsers(name :  "rabah sidhoum mohamed amine", messageText: "ghedwa ne9raw ?", imageURL :  "assets/rabah.jpg", time: "Now"),
+    ChatUsers(name :  "Oussama Djatou", messageText: "chikh", imageURL :  "assets/oussama.jpg", time: "10:32"),
+    ChatUsers(name :  "abdelbaki krebbaza", messageText: "logo ta3k rah wajed ", imageURL :  "assets/abdelbaki.jpg", time: "9:15"),
+    ChatUsers(name :  "rabah sidhoum", messageText: "esma3 ne9rew ghedwa ? ", imageURL :  "assets/rabah.jpg", time: "hier")
   ];
   @override
   Widget build(BuildContext context) {
@@ -134,17 +135,10 @@ class MyApp extends StatelessWidget {
                    isMessageRead: false,
                  ),
                  ConversationList(
-                   name: chatUsers[1].name,
-                   messageText: chatUsers[1].messageText,
-                   imageUrl: chatUsers[1].imageURL,
-                   time: chatUsers[1].time,
-                   isMessageRead: false,
-                 ),
-                 ConversationList(
-                   name: chatUsers[1].name,
-                   messageText: chatUsers[1].messageText,
-                   imageUrl: chatUsers[1].imageURL,
-                   time: chatUsers[1].time,
+                   name: chatUsers[4].name,
+                   messageText: chatUsers[4].messageText,
+                   imageUrl: chatUsers[4].imageURL,
+                   time: chatUsers[4].time,
                    isMessageRead: false,
                  ),
 
