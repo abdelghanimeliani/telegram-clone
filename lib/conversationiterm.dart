@@ -21,7 +21,7 @@ class _ConversationListState extends State<ConversationList> {
       onTap: (){
       },
       child: Padding(
-        padding: const EdgeInsets.only(left: 6 , bottom: 8),
+        padding: const EdgeInsets.only(left: 6 , bottom: 8 , right: 4),
         child: Container(
           padding: EdgeInsets.only(left: 16,right: 16,top: 10,bottom: 10),
           child: Row(
@@ -30,13 +30,13 @@ class _ConversationListState extends State<ConversationList> {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      decoration: const BoxDecoration(
+                      decoration:  BoxDecoration(
 
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               fit: BoxFit.fill ,
 
-                              image:AssetImage('assets/firstime.jpg')
+                              image:AssetImage(widget.imageUrl.toString())
                           ),
 
 

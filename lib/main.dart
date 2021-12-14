@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:telegramclone/theme.dart';
 import 'package:telegramclone/user.dart';
 
 import 'conversationiterm.dart';
@@ -12,23 +13,18 @@ main(){
 class MyApp extends StatelessWidget {
    MyApp({Key? key}) : super(key: key);
   List<ChatUsers> chatUsers = [
-    ChatUsers(name :  "Malek Talaiche", messageText: "rak faragh doka ?", imageURL :  "images/userImage1.jpeg", time: "Now"),
-    ChatUsers(name :  "Samy Benhafef", messageText: "waaach win rak ?", imageURL :  "images/userImage1.jpeg", time: "Now"),
-    ChatUsers(name :  "Oussama Djatou", messageText: "chikh", imageURL :  "images/userImage1.jpeg", time: "Now"),
-    ChatUsers(name :  "rabah sidhoum mohamed amine", messageText: "ghedwa ne9raw ?", imageURL :  "images/userImage1.jpeg", time: "Now"),
+    ChatUsers(name :  "Malek Talaiche", messageText: "rak faragh doka ?", imageURL :  "assets/firstime.jpg", time: "Now"),
+    ChatUsers(name :  "Samy Benhafef", messageText: "waaach win rak ?", imageURL :  "assets/samy.jpg", time: "12:21"),
+    ChatUsers(name :  "Oussama Djatou", messageText: "chikh", imageURL :  "assets/oussama.jpg", time: "Now"),
+    ChatUsers(name :  "rabah sidhoum mohamed amine", messageText: "ghedwa ne9raw ?", imageURL :  "assets/rabah.jpg", time: "Now"),
   ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Color(0xFFBCE6FF),
-        backgroundColor: Color(0xFFFFFFFF),
-        // Define the default font family.
-        fontFamily: 'Roboto',
 
-        ),
       home: Scaffold(
+        backgroundColor: CustomTheme.withe,
      body: SingleChildScrollView(
        child: Column(
          children: [
@@ -53,7 +49,7 @@ class MyApp extends StatelessWidget {
                                offset: Offset(0, 3), // changes position of shadow
                              ),
                            ],
-                           color: Color(0xFF90CAF9),
+                           color:CustomTheme.primaryColor,
                            shape: BoxShape.circle ,
                          ),
                          child: Icon(
@@ -97,11 +93,9 @@ class MyApp extends StatelessWidget {
                padding: const EdgeInsets.all(8.0),
                child: Row(
                  children: [
-                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
-                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
-                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
-                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
-
+                   CategoriesCard(CustomTheme.primaryColor, Icons.person, "Find People"),
+                   CategoriesCard(Colors.blue.withOpacity(0.8), Icons.inbox_outlined  , "Invite Friends"),
+                   CategoriesCard(CustomTheme.primaryColor, Icons.people, "Join Groupes"),
                  ],
                ),
              ),
@@ -185,7 +179,7 @@ Card CategoriesCard(Color color , IconData icon , String text){
 
         children: [
           Positioned(
-            bottom: 8,
+            bottom: 12,
             left: 12,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,7 +205,7 @@ Card CategoriesCard(Color color , IconData icon , String text){
                     text,
                   style: TextStyle(
                     color: Colors.black54,
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold
 
                   ),
