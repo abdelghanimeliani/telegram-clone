@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:telegramclone/user.dart';
+
+import 'conversationiterm.dart';
 
 main(){
   runApp(MyApp());
@@ -7,8 +10,13 @@ main(){
 
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+   MyApp({Key? key}) : super(key: key);
+  List<ChatUsers> chatUsers = [
+    ChatUsers(name :  "Malek Talaiche", messageText: "rak faragh doka ?", imageURL :  "images/userImage1.jpeg", time: "Now"),
+    ChatUsers(name :  "Samy Benhafef", messageText: "waaach win rak ?", imageURL :  "images/userImage1.jpeg", time: "Now"),
+    ChatUsers(name :  "Oussama Djatou", messageText: "chikh", imageURL :  "images/userImage1.jpeg", time: "Now"),
+    ChatUsers(name :  "rabah sidhoum mohamed amine", messageText: "ghedwa ne9raw ?", imageURL :  "images/userImage1.jpeg", time: "Now"),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -94,12 +102,61 @@ class MyApp extends StatelessWidget {
                    CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
                    CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
 
-
                  ],
                ),
              ),
              ),
 
+
+           SingleChildScrollView(
+             child: Column(
+               children: [
+                 ConversationList(
+                   name: chatUsers[0].name,
+                   messageText: chatUsers[0].messageText,
+                   imageUrl: chatUsers[0].imageURL,
+                   time: chatUsers[0].time,
+                   isMessageRead: false,
+                 ),
+                 ConversationList(
+                   name: chatUsers[1].name,
+                   messageText: chatUsers[1].messageText,
+                   imageUrl: chatUsers[1].imageURL,
+                   time: chatUsers[1].time,
+                   isMessageRead: false,
+                 ),
+                 ConversationList(
+                   name: chatUsers[2].name,
+                   messageText: chatUsers[2].messageText,
+                   imageUrl: chatUsers[2].imageURL,
+                   time: chatUsers[2].time,
+                   isMessageRead: false,
+                 ),
+                 ConversationList(
+                   name: chatUsers[3].name,
+                   messageText: chatUsers[3].messageText,
+                   imageUrl: chatUsers[3].imageURL,
+                   time: chatUsers[3].time,
+                   isMessageRead: false,
+                 ),
+                 ConversationList(
+                   name: chatUsers[1].name,
+                   messageText: chatUsers[1].messageText,
+                   imageUrl: chatUsers[1].imageURL,
+                   time: chatUsers[1].time,
+                   isMessageRead: false,
+                 ),
+                 ConversationList(
+                   name: chatUsers[1].name,
+                   messageText: chatUsers[1].messageText,
+                   imageUrl: chatUsers[1].imageURL,
+                   time: chatUsers[1].time,
+                   isMessageRead: false,
+                 ),
+
+               ],
+             ),
+           )
          ],
        ),
      ),
@@ -115,7 +172,7 @@ Card CategoriesCard(Color color , IconData icon , String text){
     margin: EdgeInsets.all(10),
     color: color,
     shadowColor: Colors.blueGrey,
-    elevation: 3,
+    elevation: 1,
       shape: RoundedRectangleBorder(
           side:  BorderSide(color: color,width: 3),
           borderRadius: BorderRadius.all(Radius.circular(20))
@@ -168,3 +225,5 @@ Card CategoriesCard(Color color , IconData icon , String text){
     )
   );
 }
+
+
