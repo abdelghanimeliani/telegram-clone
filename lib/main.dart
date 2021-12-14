@@ -12,11 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
-        // Define the default brightness and colors.
         primaryColor: Color(0xFFBCE6FF),
         backgroundColor: Color(0xFFFFFFFF),
         // Define the default font family.
@@ -56,10 +53,6 @@ class MyApp extends StatelessWidget {
                            color:Colors.white ,
                          ),
                        ) ,
-
-
-
-
                        const Padding(
                          padding: EdgeInsets.only(left : 10.0),
                          child: Text("Telegram" ,
@@ -86,11 +79,92 @@ class MyApp extends StatelessWidget {
                  )
                ],
              ),
-           )
+           ) ,
+
+           SizedBox(height: 20,),
+
+           SingleChildScrollView(
+               scrollDirection: Axis.horizontal,
+             child: Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: Row(
+                 children: [
+                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
+                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
+                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
+                   CategoriesCard(Theme.of(context).primaryColor, Icons.ac_unit, "rihberk"),
+
+
+                 ],
+               ),
+             ),
+             ),
+
          ],
        ),
      ),
       ),
     );
   }
+}
+
+
+
+Card CategoriesCard(Color color , IconData icon , String text){
+  return Card (
+    margin: EdgeInsets.all(10),
+    color: color,
+    shadowColor: Colors.blueGrey,
+    elevation: 3,
+      shape: RoundedRectangleBorder(
+          side:  BorderSide(color: color,width: 3),
+          borderRadius: BorderRadius.all(Radius.circular(20))
+      ),
+    child:
+    Container(
+      height: 130,
+      width: 130,
+      child: Stack(
+
+        children: [
+          Positioned(
+            bottom: 8,
+            left: 12,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black54,
+                            blurRadius: 25.0,
+                          ),
+                        ]
+                    ),
+                    child: Icon(
+                      icon,
+                      color: Colors.black54,
+                      size:30,
+                    )
+                ),
+
+                Text(
+                    text,
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
+
+                  ),
+                )
+
+              ],
+            ),
+          )
+        ],
+      ),
+    )
+  );
 }
